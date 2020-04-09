@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Pixpad | Editor</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:20,100,500|Poppins:100,500&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" type="text/css" />
+<body>
+  <div class="row">
+    <div class="column">
+      <div class="inputs">
+        <h4 class="tight">grid</h4>
+        <form class="size-picker">
+          <p class="tight left">height:</p>
+          <input type="number" class="input-height" name="height" min="32" max="100" value="32">
+          <p class="tight left">width:</p>
+          <input type="number" class="input-width" name="width" min="32" max="100" value="32">
+          <input type="submit" class="submit-button" value="create">
+        </form>
+        <h4 class="tight">color</h4>
+        <input type="button" class="color-picker" style="background: rgb(255, 229, 69);">
+        <div class="colors"></div>
+        <h4 class="tight">size</h4>
+        <select name="size" class="size">
+          <option value="0">S</option>
+          <option value="1">M</option>
+          <option value="2">L</option>
+        </select>
+        <h4 class="tight">mode</h4>
+        <input type="button" class="draw-mode pressed" value="draw">
+        <input type="button" class="erase-mode" value="erase">
+        <input type="button" class="fill-mode" value="fill">
+        <h4 class="tight">zoom</h4>
+        <input type="button" class="zoom-out" value="-">
+        <input type="button" class="zoom-in" value="+">
+        <input type="button" class="save" value="done!">
+      </div>
+    </div>
+    <div class="column">
+      <table class="pixel-canvas"></table>
+      <br>
+    </div>
+  </div>
+  <div class="footer">
+    <p><a href="https://github.com/Nvios"><b>Nivos</b></a> for <a href="https://pixpad.github.io/pixpad/gallery"><b>Pixpad.</b></a></p>
+  </div> 
+</body>
+<script type="text/javascript" src="script.js"></script>
+

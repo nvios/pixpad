@@ -1,0 +1,69 @@
+<html lang="en">
+    <head>
+        <title>Pixpad | Instructions</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:20,100,500|Poppins:100,500&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" type="text/css" />
+<body>
+    <div>
+        <h1>Here is what you will need:</h1>
+        <div class="brick-quantities text-center"></div>
+        <button class="view">Show letters</button>
+        <table class="instructions-canvas dots"></table>
+    </div> 
+</body>
+<script>
+    const brickQuantities = JSON.parse(`${localStorage.getItem("brickQuantities")}`);
+    const image = JSON.parse(localStorage.getItem("canvas"));
+    const requirementsList = document.querySelector('.brick-quantities');
+    const button = document.querySelector("button");
+    const instructionsCanvas = document.querySelector('.instructions-canvas');
+
+    function createBrickRequirements(brickQuantities) {
+        for (let [k,v] of Object.entries(brickQuantities)) {
+            let brickReqirement = document.createElement('p');
+            requirementsList.appendChild(brickReqirement);
+            brickReqirement.innerHTML = `${v} bricks of color ${k}`
+        }
+    }
+
+    function loadInstructions(image) {
+        let gridHeight = image.length;
+        let gridWidth = image[0].length;
+
+        for (let i = 0; i < gridHeight; i++) {
+            let gridRow = document.createElement("tr");
+            instructionsCanvas.appendChild(gridRow);
+
+            for (let j = 0; j < gridWidth; j++) {
+            let gridCell = document.createElement("td");
+            let letter = document.createElement("span")
+            gridRow.appendChild(gridCell);
+            gridCell.appendChild(letter);
+            letter.innerHTML = image[i][j][0]
+            gridCell.style.backgroundColor = image[i][j][1];
+            gridCell.setAttribute('id', `${i},${j}`);
+            };
+        };
+    };
+
+    window.addEventListener("DOMContentLoaded", () => {
+        createBrickRequirements(brickQuantities);
+        loadInstructions(image);
+    });
+
+    button.addEventListener("click", () => {
+        if (instructionsCanvas.classList[1] == "dots") {
+            instructionsCanvas.classList.remove("dots")
+            instructionsCanvas.classList.add("letters")
+            button.innerHTML = "Hide letters"
+        }
+        else { 
+            instructionsCanvas.classList.add("dots")
+            instructionsCanvas.classList.remove("letters")
+            button.innerHTML = "Show letters"
+        };
+    });
+</script>

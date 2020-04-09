@@ -1,0 +1,379 @@
+body {
+  color: #222;
+	background: rgb(240, 240, 240);
+	font-family: 'Montserrat', sans-serif; 
+}
+
+/* Headings
+-------------------------------------------------------------- */
+
+h1,h2,h3,h4,h5,h6 { font-weight: normal; color: #111; }
+
+h1 { font-size: 2em; margin: 0em; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 100; }
+h2 { font-size: 1.8em; margin: 0em; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 100; }
+h3 { font-size: 1.5em; margin: 0em; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 500; }
+h4 { font-size: 1.2em; font-family: 'Poppins', sans-serif; font-weight: 500; }
+h5 { font-size: 1em; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 500; }
+h6 { font-size: 1em; font-weight: bold; }
+
+h1 img, h2 img, h3 img,
+h4 img, h5 img, h6 img {
+  margin: 0;
+}
+img.preview { height: 400; 
+	display: block; 
+	margin-left: auto; 
+	margin-right: auto; 
+	image-rendering: pixelated; 
+	transition: 0.3s; 
+	border-radius: 6px;
+	box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.200)
+}
+img:hover { transform: matrix(2, 0, 0, 2, 0, 150); position: relative; z-index: 1;}
+
+
+/* Text elements
+-------------------------------------------------------------- */
+
+p,
+label, 
+input       { margin: 1 1 0 0em; font-family: 'Montserrat', sans-serif; font-weight:100; font-size: 14px; text-align: center; }
+/* 
+	These can be used to pull an image at the start of a paragraph, so 
+	that the text flows around it (usage: <p><img class="left">Text</p>) 
+ */
+.left  			{ float: left !important; }
+p .left			{ margin: 1.5em 1.5em 1.5em 0; padding: 0; }
+.right 			{ float: right !important; }
+p .right 		{ margin: 1.5em 0 1.5em 1.5em; padding: 0; }
+
+a:focus,
+a:hover     { color: rgb(72, 212, 201); text-decoration: underline; }
+a           { color: rgb(0, 0, 0); text-decoration: none;}
+
+blockquote  { margin: 1.5em; color: #666; font-style: italic; }
+strong,dfn	{ font-weight: bold; }
+em,dfn      { font-style: italic; }
+sup, sub    { line-height: 0; }
+
+abbr,
+acronym     { border-bottom: 1px dotted #666; }
+address     { margin: 0 0 1.5em; font-style: italic; }
+del         { color:#666; }
+
+pre         { margin: 1.5em 0; white-space: pre; }
+pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5; }
+
+hr { opacity: 10%}
+
+/* Lists
+-------------------------------------------------------------- */
+
+li ul,
+li ol       { margin: 0; }
+ul, ol      { margin: 0 1.5em 1.5em 0; padding-left: 1.5em; }
+
+ul          { list-style-type: disc; }
+ol          { list-style-type: decimal; }
+
+dl          { margin: 0 0 1.5em 0; }
+dl dt       { font-weight: bold; }
+dd          { margin-left: 1.5em;}
+
+/* Misc classes
+-------------------------------------------------------------- */
+
+.small      { font-size: .8em; margin-bottom: 1.875em; line-height: 1.875em; }
+.large      { font-size: 5em; margin-top: 0em; color: #000; }
+.hide       { display: none; }
+.tight      { margin: 8px 0px; padding: 0px; }
+.center		  { display: block; margin-left: auto; margin-right: auto; width: 90%;}
+.text-center{ text-align: center; }
+.v-center	  { margin-left: auto; margin-right: auto; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+.instr	  	{ padding: 4em 4em 0em; }
+.no-border  { border: none; }
+
+table,
+tr,
+td {
+  border: rgb(180, 180, 180) 1px dotted;
+}
+
+.pixel-canvas {
+  background-color : white;
+  margin-left: 82px; 
+}
+
+table {
+	border-collapse: collapse;
+	table-layout: fixed; 
+	margin: auto; 
+}
+
+td {
+	height: 20px;
+	width: 20px;
+	min-width: 20px;
+	box-sizing: border-box;
+	cursor: crosshair;
+}
+
+.instructions-canvas { margin: auto; }
+
+.instructions-canvas td {
+	color: rgb(0, 0, 0);
+	text-shadow: -1px 0 rgb(255, 255, 255), 
+								0 1px rgb(255, 255, 255), 
+								1px 0 rgb(255, 255, 255), 
+								0 -1px rgb(255, 255, 255);
+	text-align: center;
+	padding: 0px;	
+	font-size: 12px;
+	overflow: hidden; 
+	border: rgb(160, 160, 160) 1px dotted; 
+	height: 20px;
+	min-height: 20px; 
+	max-height: 20px;
+	width: 20px; 
+	min-width: 20px;
+	max-width: 20px;
+}
+.instructions-canvas.dots td::after {
+	box-shadow: 0 2px 3px 0 rgba(56, 56, 56, 0.37), inset 0 2px 3px 0px rgba(228, 228, 228, 0.541);
+	border-radius: 50%;
+	display: block;
+	content: "";
+	height: 64%;
+	width: 64%;
+	left: 18%;
+	position: relative;
+	z-index: 1;
+}
+
+span { display: none; }
+.letters span { display: block; }
+
+input[type=number] {
+  width: 3em;
+  border: 1px solid #dcdcdc;
+}
+
+.color-picker, .submit-button, .quick-fill, .draw-mode, .erase-mode, .fill-mode, .save {
+  box-shadow: inset 0px 1px 0 0 #fff;
+	background: linear-gradient(#f9f9f9 5%, #e9e9e9 100%);
+	border-radius: 7px;
+	border: 1px solid #dcdcdc;
+	font-weight: bold;
+	padding: 6px 6px;
+	text-decoration: none;
+  cursor: pointer;
+  display: block;
+  margin-top: 0.5em;
+  width: 85%;
+}
+
+.view { 
+	box-shadow: inset 0px 1px 0 0 #fff;
+	background: linear-gradient(#f9f9f9 5%, #e9e9e9 100%);
+	border-radius: 7px;
+	border: 1px solid #dcdcdc;
+	font-weight: bold;
+	padding: 6px 6px;
+	text-decoration: none;
+  cursor: pointer;
+  display: block;
+  margin: 0.5em auto;
+}
+
+
+.color-picker:focus, 
+.submit-button:focus, 
+.quick-fill:focus, 
+.draw-mode:focus, 
+.erase-mode:focus, 
+.fill-mode:focus,
+.zoom-out:focus, 
+.zoom-in:focus, 
+.save:focus,
+.view:focus {
+	outline:0 !important;
+	border: 1px solid rgb(72, 212, 201);
+}
+
+.draw-mode.pressed, .erase-mode.pressed, .fill-mode.pressed {
+	background: linear-gradient(#cecece 5%, #e9e9e9 100%);
+}
+
+.zoom-out, .zoom-in {
+	box-shadow: inset 0px 1px 0 0 #fff;
+	background: linear-gradient(#f9f9f9 5%, #e9e9e9 100%);
+	border-radius: 7px;
+	border: 1px solid #dcdcdc;
+	font-weight: bold;
+	padding: 6px 6px;
+	text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+	margin: 0em auto 0em;
+	width: 40%;
+}
+
+.color-picker::-webkit-color-swatch {
+  border: none;
+  border-radius: 10px;
+  padding: 0;
+}
+.color-picker::-webkit-color-swatch-wrapper {
+  border: none;
+  border-radius: 10px;
+  padding: 0;
+}
+
+.color-picker {
+	box-shadow: inset 0px 20px 30px -20px  rgba(255, 255, 255, 0.774);
+}
+
+.colors { 
+	visibility: hidden;
+	width: 134px;
+	background-color: rgba(0, 0, 0, 0.445);
+	border: 1px solid #ffffff7e;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	top: 15%;
+	left: 100%;
+}
+
+.colors .create { 
+	top: 20%;
+}
+
+.colors button::after {
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,.4), inset 0 2px 2px 0px rgba(255, 255, 255, 0.24);
+	border-radius: 50%;
+	display: block;
+	content: "";
+	height: 16px;
+	width: 16px;
+	left: -2px;
+	position: relative;
+}
+
+.colors button{ 
+	width: 29px;
+	height: 29px;
+	border-radius: 6px;
+	position: relative;
+	z-index: 1;
+	margin: 2px;
+}
+
+/* Styles content to left of grid */
+.inputs {
+  position: fixed;
+  text-align: left;
+  border-radius: 7px;
+  border: 1px solid #dcdcdc;
+  padding-left: 0.5em;
+  padding-bottom: 0.8em;
+  width: 65px;
+  background-color : white;
+}
+
+.column {
+  margin: auto;
+}
+
+.column:last-of-type {
+  width: auto;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*----------------------------------------------------------------
+TUNE IMAGE PROPERTIES
+----------------------------------------------------------------*/
+#tune-image { display: block; text-align: center; }
+select { margin: 5px }
+button { 
+	margin-top: 10px;
+	text-align: center;
+ }
+.tooltip {
+		position: relative;
+		display: inline-block;
+}
+.tooltip .tooltiptext {
+		visibility: hidden;
+		text-align: left;
+		font-size: .8em;
+		font-weight: normal;
+		width: 150px;
+		background-color: rgba(70, 70, 70, 0.473);
+		color: #fff;
+		border-radius: 6px;
+		padding: 6px;
+		position: absolute;
+		z-index: 1;
+		bottom: -20px;
+		left: 105%;
+}
+.tooltip .tooltiptext::after {
+		content: "";
+		position: absolute;
+		top: 94%;
+		right: 100%;
+		margin-top: -5px;
+		border-width: 5px;
+		border-style: solid;
+		border-color: transparent rgba(70, 70, 70, 0.466) transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+		visibility: visible;
+		transition: 0.3s; 
+}
+
+/*----------------------------------------------------------------
+UPLOAD IMAGE PROPERTIES
+----------------------------------------------------------------*/
+
+#aspect {
+	padding: 10px;
+	text-align: center;
+}
+#aspect input {
+	margin: 20px 5px 0px;
+	font-weight:100; 
+	font-size: 55px; 
+	text-align: left;
+}
+#upload-demo {
+	padding: 0px 0px 1px;
+	border-radius: 10px;
+	background: rgb(255, 255, 255);
+	box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.178);
+	width: fit-content;
+	margin: auto;
+}
+#crop {
+	text-align: center;
+}
+
+#crop button {
+	margin: 20px 0px 20px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
