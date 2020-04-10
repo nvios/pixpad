@@ -126,11 +126,12 @@ td {
 								0 1px rgb(255, 255, 255), 
 								1px 0 rgb(255, 255, 255), 
 								0 -1px rgb(255, 255, 255);
+	box-shadow: inset 0px -2px 3px 0px rgba(56, 56, 56, 0.25), inset 1px 2px 4px 0px rgba(228, 228, 228, 0.25);
 	text-align: center;
 	padding: 0px;	
 	font-size: 12px;
 	overflow: hidden; 
-	border: rgb(160, 160, 160) 1px dotted; 
+	border: rgba(78, 78, 78, 0.25) 1px solid; 
 	height: 20px;
 	min-height: 20px; 
 	max-height: 20px;
@@ -139,7 +140,7 @@ td {
 	max-width: 20px;
 }
 .instructions-canvas.dots td::after {
-	box-shadow: 0 2px 3px 0 rgba(56, 56, 56, 0.37), inset 0 2px 3px 0px rgba(228, 228, 228, 0.541);
+	box-shadow: 0 2px 3px 0 rgba(56, 56, 56, 0.37), inset 0 2px 3px 0px rgba(175, 174, 174, 0.25);
 	border-radius: 50%;
 	display: block;
 	content: "";
