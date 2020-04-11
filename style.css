@@ -291,6 +291,11 @@ input[type=number] {
   width: auto;
 }
 
+.two-columns {
+  float: left;
+  width: 50%;
+}
+
 .row:after {
   content: "";
   display: table;
@@ -374,7 +379,7 @@ UPLOAD IMAGE PROPERTIES
 HELP MODAL
 ----------------------------------------------------------------*/
 .modal {
-  display: block; 
+  display: none; 
   position: fixed; 
   z-index: 1;
   padding-top: 40px;
