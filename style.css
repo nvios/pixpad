@@ -291,15 +291,19 @@ input[type=number] {
   width: auto;
 }
 
-.two-columns {
-  float: left;
-  width: 50%;
-}
-
-.row:after {
+.row:after, .modal-row:after {
   content: "";
   display: table;
   clear: both;
+}
+
+.modal-row { 
+	width: 500px;
+}
+
+.two-columns {
+  float: left;
+  width: 50%;
 }
 
 /*----------------------------------------------------------------
