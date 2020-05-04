@@ -24,4 +24,4 @@ Different brush sizes are obtained by including a **neigbor fronteer** function 
 
 The previous task prooved to be particularly challenging when the path finding function was added. At that stage, the custom fronteer (brush size) had to be applied to the new path as well and the array of pixels had to be stored in the undo/redo stacks to allow the user to discard the last actions. 
 
-
+## Click <a href="https://nvios.github.io/luca_bontempi/main.html"><strong>here</strong></a> to see my latest projects!
